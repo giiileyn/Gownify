@@ -1,0 +1,19 @@
+Name: Scarlet Soirée Stunner
+Color: Red
+Category: Cocktail Dress 
+Prize:₱13,300 
+
+Name: Pink Pearl Party Perfection
+Color: Pink
+Category : Cocktail Dress
+Prize:₱10,000 
+
+Name: Sapphire Skyline Stunner
+Color: Blue
+Category: Cocktail Dress
+Prize:₱15,000 
+
+Name: Ivory Elegantly Purity
+Color: White
+Category: Cocktail Dress
+Prize:₱5,000 

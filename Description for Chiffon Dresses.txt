@@ -1,0 +1,19 @@
+Name :Midnight Noir Chiffon Charm
+Color : Black
+Category : Chiffon Dress
+Prize:₱15,000 
+
+Name: Snowflake Serenity Chiffon Elegance
+Color: White
+Category: Chiffon Dress
+Prize:₱15,000 
+
+Name: Amethyst Dream Chiffon Elegance
+Color: Purple
+Category: Chiffon Dress
+Prize:₱11,000 
+
+Name: Blush Blossom Chiffon Dress
+Color : Pink
+Ctaegory : Chiffon Dress
+Prize:₱13,000 

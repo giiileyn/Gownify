@@ -1,0 +1,19 @@
+Name: Crimson Gala Glamour
+Color: Red
+Category: Evening Gown
+Prize: ₱40,000 
+
+Name: Sapphire Starlight Splendor
+Color: Blue
+Category: Evening Gown
+Prize: ₱45,000 
+
+Name: Emerald Enchantment Elegance
+Color: Green
+Category: Evening Gown
+Prize:₱40,000 
+
+Name: Opal Moonlight Elegance
+Color: White
+Category: Evening Gown
+Prize: ₱38,500 

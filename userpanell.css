@@ -1,0 +1,71 @@
+/* Add this CSS to your external stylesheet or in the head of your HTML file */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    font-weight: bold;
+    color: #0a325b;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-color: #343a40;
+}
+
+.form-inline {
+    margin-right: 20px;
+}
+
+.form-inline input {
+    margin-right: 10px;
+}
+
+.btn-outline-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* You can add more styles as needed */
+
+/* styles.css */
+
+.container {
+    margin-top: 4rem;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    max-height: 200px;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
+}
