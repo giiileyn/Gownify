@@ -69,6 +69,7 @@
 
     <div class="container mt-4">
         <?php
+
         while ($categoryRow = mysqli_fetch_assoc($categoryResult)) {
             $categoryId = $categoryRow['category_id'];
             $categoryName = $categoryRow['category_name'];
@@ -76,7 +77,7 @@
             <h2 class="text-center col-lg-12 text-center border rounded bg-dark p-2 text-white my-5"><?php echo $categoryName; ?></h2>
             <div class="row">
                 <?php
-                // Fetch and display dresses for each category
+                // Fetch and display products for each category
                 $dressQuery = "SELECT * FROM product WHERE category_id = '$categoryId'";
                 $dressResult = mysqli_query($con, $dressQuery);
 
@@ -84,20 +85,17 @@
                     $itemName = $dressRow['product_name'];
                     $price = $dressRow['price'];
                     $imagePath = $dressRow['product_image'];
+                    $productId = $dressRow['product_id']; // Make sure to fetch product_id here
                 ?>
                     <div class="col-lg-3">
-                        <form action="manage_cart.php" method="POST">
-                            <div class="card">
-                                <img src="<?php echo $imagePath; ?>" class="card-img-top">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title"><?php echo $itemName; ?></h5>
-                                    <p class="card-text">Price: ₱<?php echo $price; ?></p>
-                                    <button type="submit" name="Add_to_Cart" class="btn btn-warning">Add to Cart</button>
-                                    <input type="hidden" name="Item_Name" value="<?php echo $itemName; ?>">
-                                    <input type="hidden" name="Price" value="<?php echo $price; ?>">
-                                </div>
+                        <div class="card">
+                            <img src="<?php echo $imagePath; ?>" class="card-img-top">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><?php echo $itemName; ?></h5>
+                                <p class="card-text">Price: ₱<?php echo $price; ?></p>
+                                <a href="displayProducts.php?id=<?php echo $productId; ?>" class="btn btn-info">Show Details</a>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 <?php
                 }
@@ -106,6 +104,7 @@
         <?php
         }
         ?>
+
     </div>
 
 </body>

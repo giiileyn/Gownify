@@ -2,7 +2,6 @@
 include_once "header1.php";
 include_once "sidebar_user.php";
 include_once "config/dbconnect.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -64,55 +63,47 @@ include_once "config/dbconnect.php";
             }
             ?>
         </table>
-    </div>
-     <!-- <div class="container">
+
+        <?php 
+        if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+        ?>
             <div class="border bg-light rounded p-4">
                 <h4>Total Cost:</h4>
-                <h5 class="text-right" id="supertot"></h5>
-                <br> -->
-                <?php 
-                if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
-                ?>
-                    <form action="check_out.php" method="POST">
-                        <!-- Add your form fields here for checkout -->
-
-                        <button class="yellow-button" name="check_out">Check Out</button>
-                    </form>
-                <?php
-                }
-                ?>
-            <!-- </div>
-        </div> -->
-    </div>
-</div>
-
-<script>
-    var st = 0;
-    var iprice = document.getElementsByClassName('iprice');
-    var iquan = document.getElementsByClassName('iquan');
-    var itot = document.getElementsByClassName('itot');
-    var supertot = document.getElementById('supertot');
-
-    function totcost() {
-        st = 0;
-        for (i = 0; i < iprice.length; i++) {
-            itot[i].innerText = (iprice[i].value) * (iquan[i].value);
-            st = st + (iprice[i].value) * (iquan[i].value);
+                <h5 class="text-right" id="supertot">0</h5>
+                <form action="check_out.php" method="POST">
+                    <button class="yellow-button" name="check_out">Check Out</button>
+                </form>
+            </div>
+        <?php
         }
-        supertot.innerText = st;
-    }
+        ?>
+    </div>
 
-    window.onload = totcost;
+    <script>
+        var st = 0;
+        var iprice = document.getElementsByClassName('iprice');
+        var iquan = document.getElementsByClassName('iquan');
+        var itot = document.getElementsByClassName('itot');
+        var supertot = document.getElementById('supertot');
 
-    Array.from(iquan).forEach(function (element) {
-        element.addEventListener('input', function () {
-            totcost();
+        function totcost() {
+            st = 0;
+            for (i = 0; i < iprice.length; i++) {
+                var total = (iprice[i].value) * (iquan[i].value);
+                itot[i].innerText = total.toFixed(2); // Display total per item
+                st += total; // Accumulate the total cost
+            }
+            supertot.innerText = st.toFixed(2); // Display total cost
+        }
+
+        window.onload = totcost;
+
+        Array.from(iquan).forEach(function (element) {
+            element.addEventListener('input', function () {
+                totcost();
+            });
         });
-    });
-</script>
-</div>
-
-    <!-- Your JavaScript script for calculating the total cost goes here -->
+    </script>
 
     <!-- Include necessary scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
