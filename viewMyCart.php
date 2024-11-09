@@ -40,7 +40,7 @@ include_once "config/dbconnect.php";
                         <tr>
                             <td>$sr</td>
                             <td>{$value['Item_Name']}</td>
-                            <td>{$value['Price']}<input type='hidden' class='iprice' value='{$value['Price']}'></td>
+                            <td>₱{$value['Price']}<input type='hidden' class='iprice' value='{$value['Price']}'></td>
                             <td>
                                 <form action='manage_cart.php' method='POST'>
                                     <input class='text-center iquan' name='Mod_Quantity' onchange='this.form.submit();' type='number' value='{$value['Quantity']}' min='1' max='50'>
@@ -69,7 +69,7 @@ include_once "config/dbconnect.php";
         ?>
             <div class="border bg-light rounded p-4">
                 <h4>Total Cost:</h4>
-                <h5 class="text-right" id="supertot">0</h5>
+                <h5 class="text-right" id="supertot">₱0</h5>
                 <form action="check_out.php" method="POST">
                     <button class="yellow-button" name="check_out">Check Out</button>
                 </form>
@@ -90,10 +90,10 @@ include_once "config/dbconnect.php";
             st = 0;
             for (i = 0; i < iprice.length; i++) {
                 var total = (iprice[i].value) * (iquan[i].value);
-                itot[i].innerText = total.toFixed(2); // Display total per item
+                itot[i].innerText = '₱' + total.toFixed(2); // Display total per item
                 st += total; // Accumulate the total cost
             }
-            supertot.innerText = st.toFixed(2); // Display total cost
+            supertot.innerText = '₱' + st.toFixed(2); // Display total cost
         }
 
         window.onload = totcost;

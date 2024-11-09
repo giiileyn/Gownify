@@ -10,6 +10,7 @@
         <th>Item Name</th>
         <th> Price </th>
         <th>Quantity</th>
+        <th>Total Price</th>
      
         <!-- <th>Total Price</th> -->
         <!-- <th>OrderDate</th> -->
@@ -43,6 +44,7 @@
       
       if ($result-> num_rows > 0){
         while ($row=$result-> fetch_assoc()) {
+          $totalPrice = $row["Price"] * $row["Quantity"];
     ?>
        <tr>
           <td><?=$row["item_id"]?></td>
@@ -50,8 +52,9 @@
           <td><?=$row["phone_number"]?></td>
           <td><?=$row["complete_address"]?></td>
           <td><?=$row["Item_Name"]?></td>
-          <td><?=$row["Price"]?></td>
+          <td>₱<?=$row["Price"]?></td>
           <td><?=$row["Quantity"]?></td>
+          <td>₱<?=number_format($totalPrice, 2)?></td> 
           <!-- <td><?=$row[""]?></td> -->
           <!-- <td><?=$row["pay_status"]?></td> -->
            <?php 
